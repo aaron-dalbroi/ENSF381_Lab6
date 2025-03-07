@@ -2,29 +2,20 @@ import './App.css';
 import React from 'react';
 
 function App() {
-  // JavaScript Expressions
+
   const currentYear = new Date().getFullYear();
-  const isLoggedIn = true; // Change to false to test
+  const isLoggedIn = true;
+  const loginMessage = isLoggedIn ? 'Welcome back!' : 'Please log in';
 
   return (
     <div>
-      {/* JSX Elements */}
       <h1>ENSF-381: Full Stack Web Development</h1>
       <p>React Components</p>
 
-      {/* Embedding JavaScript Expression */}
+
       <p>Current Year: {currentYear}</p>
 
-      {/* Conditional Rendering */}
-      <p>
-        {(() => {
-          if (isLoggedIn) {
-            return "Welcome back!";
-          } else {
-            return "Please log in.";
-          }
-        })()}
-      </p>
+      <p>{ loginMessage}</p>
     </div>
   );
 }
