@@ -1,34 +1,38 @@
 import './App.css';
 import React from 'react';
-import EngineeringTopics from './EngineeringTopics';
+import Home from './Home.js';
+import About from './About.js';
+import Contact from './Contact.js';
+import EngineeringTopics from './EngineeringTopics.js'
 
 function App() {
-  // JavaScript Expressions
+
   const currentYear = new Date().getFullYear();
-  const isLoggedIn = true; // Change to false to test
+  const isLoggedIn = true;
+  const loginMessage = isLoggedIn ? 'Welcome back!' : 'Please log in';
 
   return (
     <div>
-      {/* JSX Elements */}
       <h1>ENSF-381: Full Stack Web Development</h1>
       <p>React Components</p>
 
-      {/* Embedding JavaScript Expression */}
+
       <p>Current Year: {currentYear}</p>
 
-      {/* Conditional Rendering */}
-      <p>
-        {(() => {
-          if (isLoggedIn) {
-            return "Welcome back!";
-          } else {
-            return "Please log in.";
-          }
-        })()}
-      </p>
-
-      <EngineeringTopics />
-      
+      <p>{ loginMessage}</p>
+          <Home title='Home Page'
+              description= 'Welcome to our website'
+          ></Home>
+          <About title='About Page'
+              description='We are passionate about
+                            delivering quality experiences'
+          ></About>
+          <Contact title='Contact Page'
+              description='Feel free to reach out to us via
+                            email or phone'
+          ></Contact>
+		  
+		<EngineeringTopics></EngineeringTopics>  
     </div>
   );
 }
